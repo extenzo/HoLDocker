@@ -1,4 +1,4 @@
-# NAMESPACE
+# Création d'un Namespace
 
 Dans Kubernetes, les namespaces sont des regroupements logiques de vos différentes ressources.
 Pour ce TP nous allons créer un namespace du nom de votre choix
