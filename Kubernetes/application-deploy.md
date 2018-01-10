@@ -14,7 +14,7 @@ Pour créer votre Backend, vous allez devoir utiliser kubectl comme auparavant p
 kubectl create -f deployment-back.yaml
 ```
 
-Une fois ce service déployé, vous avec maintenant vos pods qui tournent sur le cluster, mais votre redis n'est pas accessible car aucun service devant n'est là pour l'exposer au monde, que ce soit local, dans votre cluster ou publiquement.
+Une fois ce service déployé, vous avez maintenant vos pods qui tournent sur le cluster, mais votre redis n'est pas accessible car aucun service devant n'est là pour l'exposer au monde, que ce soit local, dans votre cluster ou publiquement.
 
 Afin de créer le servive de votre backend et le rendre accessible par les autres services et/ou pods, exécuter la commande suivante:
 
@@ -35,9 +35,9 @@ Contrairement au backend ce deployment utilisera les images que vous avez créé
 
 Ensuite, et car nous voulons pouvoir mettre à l'échelle de manière automatique, vous constaterez que nous définissons des contraintes d'utilisations de CPU.
 
-Une fois ce service déployé, vous avec maintenant vos pods qui tournent sur le cluster, mais votre front n'est pas accessible publiquement.
+Une fois ce service déployé, vous avez maintenant vos pods qui tournent sur le cluster, mais votre front n'est pas accessible publiquement.
 
-Afin de créer le servive de votre backend et le rendre accessible par les autres services et/ou pods, exécuter la commande suivante:
+Afin de créer le servive de votre backend et le rendre accessible de l'extéiruer, exécuter la commande suivante qui créera le service et assignera de manière simple un loadbalancer Azure pour répartir la charge entre les pods.
 
 ```
 kubectkl create -f service-back.yaml
