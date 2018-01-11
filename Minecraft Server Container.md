@@ -1,14 +1,54 @@
 Dans ce lab, vous apprendrez comment créer un container Linux exécutant Minecraft Server. 
 Minecraft Server est une application Java, par conséquent, il est possible de l'exécuter sur n'importe quel OS disposant du framework Java. 
-1.	Préparation du serveur
+1. prérequis
 
-Minecraft Server peut être téléchargé a l’[adresse suivante](https://minecraft.net/en-us/download/server). Une fois téléchargé sur un ordinateur exécutant Java, placez le fichier JAR dans un répertoire dédié (par exemple **C:\temp\MCServ**) puis ouvrez une invite de commande, placez-vous dans ce répertoire et lancez la commande suivante  
-**java -jar minecraft_server.x.xx.x.jar nogui**
-![](https://i0.wp.com/i.imgur.com/3mGBK9Y.png)
+Disposer d'une machine exécutant docker avec des conteneurs Linux. Par exemple en utilisant le modèle de machine virtuelles [Docker on Ubuntu Server](https://azuremarketplace.microsoft.com/en/marketplace/apps/CanonicalandMSOpenTech.DockerOnUbuntuServer1404LTS/) disponible sur le marketplace Azure. 
 
-Cette commande va initialiser l'environnement du serveur Minecraft mais l'exécution va s'arrêter car c'est la première fois que vous exécutez le serveur et il faut accepter la licence. Pour cela éditez le fichier eula.txt et remplacez la ligne **eula=false** par **eula=true**.
+2. Préparation du conteneur
 
-Vérifiez que le serveur est fonctionnel en lançant la commande à nouveau, si vous voyez les informations de création du monde Minecraft (Preparing spawn area), c’est que le serveur est opérationnel.
-![](https://i2.wp.com/i.imgur.com/YNJFXLH.png)
+Lancez une invite de commande en mode administrateur/root puis tapez la commande suivante pour exécuter un conteneur ubuntu en mode interactif
+```
+docker run -t -i ubuntu /bin/bash
+```
 
-2. préparation du conteneur
+Puis tapez les commandes suivantes pour installer Java, télécharger et configurer le serveur Minecraft
+```
+export LANG=C
+apt-get update
+apt-get dist-upgrade
+apt-get install default-jre
+apt-get install wget
+mkdir /mcserv
+cd /mcserv
+wget https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar
+echo eula=true>eula.txt
+exit
+```
+
+Il faut maintenant sauvegarder les changements, pour cela, récupérez d'abord le nom du conteneur en tapant
+
+```
+docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                       PORTS               NAMES
+8da0e45098b2        ubuntu              "/bin/bash"         2 hours ago         Exited (130) 2 minutes ago                       **zealous_noyce**
+```
+
+Puis 
+
+```
+docker commit zealous_noyce minecraftserver:1.12.2
+```
+
+Votre nouvelle image apparait maintenant dans la liste des images disponibles
+
+```
+docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+minecraftserver     1.12.2              38f50e621a37        About a minute ago   474MB
+ubuntu              latest              00fd29ccc6f1        3 weeks ago          111MB
+```
+
+Vous pouvez maintenant tester votre conteneur en tapant
+```
+docker run -w /mcserv minecraftserver:1.12.2 java -jar /mcserv/minecraft_server.1.12.2.jar -Xmx1024M -Xms1024M nogui
+```
