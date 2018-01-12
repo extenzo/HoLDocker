@@ -50,5 +50,5 @@ ubuntu              latest              00fd29ccc6f1        3 weeks ago         
 
 Vous pouvez maintenant tester votre conteneur en tapant
 ```
-docker run -w /mcserv minecraftserver:1.12.2 java -jar /mcserv/minecraft_server.1.12.2.jar -Xmx1024M -Xms1024M nogui
+docker run -w /mcserv minecraftserver:1.12.2 java -Xmx1024M -Xms1024M -jar /mcserv/minecraft_server.1.12.2.jar  nogui
 ```
