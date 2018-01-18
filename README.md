@@ -17,7 +17,7 @@ Description des ateliers
 
 
 
-# Quelques outils indispensable pour le Hands On Lab:
+# Quelques outils indispensables pour le Hands On Lab:
 
 1.  Si vous ne disposez pas de Docker sur votre pc, vous pouvez télécharger [Docker for Windows ](https://store.docker.com/editions/community/docker-ce-desktop-windows). Cet outil est indispensable pour la suite du TP
 2. Indispensable également pour la suite du TP, l'utilitaire qui nous permettra d'administrer notre cluster Kubernetes. Les instructions pour l'installation sont disponibles sur ce lien [Kubectl cmd line tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl)
