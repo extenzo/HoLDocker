@@ -40,5 +40,5 @@ On remarque que trois images ont été téléchargée ou créées
 
 - Exécuter la commande    "docker inspect azure-vote-front" et rechercher la valeur du "HostPort" dans la section "Network settings". Cela indique le port exposé par l'application
 
-- Tester l'application deuis un navigateur via l'URL "http://localhost:8080"
+- Tester l'application depuis un navigateur via l'URL "http://localhost:8080"
 
