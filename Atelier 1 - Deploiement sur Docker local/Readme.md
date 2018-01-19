@@ -25,6 +25,7 @@ Autres commandes basiques que nous utiliserons plus tard :
 - "docker run" pour exécuter un container de manière isolée
 - "docker-compose <monfichieryml>" outil pour définir et exécuter une application basée sur plusieurs containers  
 
+
 # définition et creation de l'application
 L'application de sondage s'appuie sur deux containers : un front et un back. La description de l'application est contenue dans le fichier "docker-compose.yml"
 
@@ -42,3 +43,5 @@ On remarque que trois images ont été téléchargée ou créées
 
 - Tester l'application depuis un navigateur via l'URL "http://localhost:8080"
 
+
+# Option - Mise à jour de l'applications

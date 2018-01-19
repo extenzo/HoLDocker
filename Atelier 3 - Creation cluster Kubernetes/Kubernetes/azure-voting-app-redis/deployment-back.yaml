@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: azure-vote-back
+  namespace: azure
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: azure-vote-back
+    spec:
+      containers:
+      - name: azure-vote-back
+        image: redis
+        ports:
+        - containerPort: 6379
+          name: redis
