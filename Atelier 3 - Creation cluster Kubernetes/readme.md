@@ -4,7 +4,8 @@
 Une façon très simple d'instancier un cluster Kubernetes sur Azure est d'utiliser Azure-CLI.
 Une fois connecté, utiliser la commande suivante
 
-```az acs create --orchestrator-type kubernetes --resource-group myResourceGroup
+```
+az acs create --orchestrator-type kubernetes --resource-group myResourceGroup
  --name myK8SCluster --generate-ssh-keys
  ```
 
