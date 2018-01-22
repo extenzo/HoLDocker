@@ -5,8 +5,7 @@ Une façon très simple d'instancier un cluster Kubernetes sur Azure est d'utili
 Une fois connecté, utiliser la commande suivante
 
 ```
-az acs create --orchestrator-type kubernetes --resource-group myResourceGroup
- --name myK8SCluster --generate-ssh-keys
+az acs create --orchestrator-type kubernetes --resource-group myResourceGroup  --name myK8SCluster --generate-ssh-keys
  ```
 
 ## Installation du kubectl
@@ -14,10 +13,10 @@ kubectl est l'utilitaire d'administration de votre clsuter Kubernetes. Vous pouv
 Pour ce HoL, il est préférable de l'installer à l'aide de la commande suivante pour avoir la version compatible au mieux avec votre clsuter.
 
 ```
-az acs kubernetes install-cli
+az acs kubernetes install-cli --install-location C:\path\kubectl(.exe)
 ```
 
-PS: Pour les utilisateurs de Windows, il faut lancer azure cli en mode administrateur et sûrement ajouter *c:\program files (x86)* dans le PATH de votre ordinateur.
+PS: Pour les utilisateurs de Windows, nous irons nous connecter en SFTP pour aller récupérer le fichier de config car az cli a un bug. Il faut également lancer azure cli en mode administrateur et sûrement ajouter *c:\program files (x86)* dans le PATH de votre ordinateur.
 
 
 ## Connection à votre cluster
@@ -26,6 +25,8 @@ Maintenant que vous avons le cluster kubernetes déployé et l'utilitaire kubctl
 ```
 az acs kubernetes get-credentials --resource-group myResourceGroup --name myK8SCluster
 ```
+
+Etape non nécessaire si vous avez récupérer le fichier config en SFTP
 
 ## Vérifications
 Essayez les commandes suivantes pour valider le bon fonctionnement

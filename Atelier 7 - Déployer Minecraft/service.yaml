@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft
+  namespace: azure
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 25565
+  selector:
+    app: minecraft

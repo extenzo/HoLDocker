@@ -17,9 +17,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-front
-        image: <votre_nom_de_registry>.azurecr.io/<votre_image>
-        imagePullSecrets:
-        - name: azureregistry
+        image: holdocker2018.azurecr.io/azure-vote-front:0.1.0
         ports:
         - containerPort: 80
         resources:
@@ -30,3 +28,5 @@ spec:
         env:
         - name: REDIS
           value: "azure-vote-back"
+      imagePullSecrets:
+      - name: azureregistry
