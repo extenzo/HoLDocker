@@ -13,7 +13,7 @@ Afin de créer ce namespace il va vous falloir créer un fichier nommé *namespa
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: votingapp
+  name: azure
 ```
 
 Une fois que vous serez connecté avec `kubectl` sur votre cluster nous allons instancier la création du namespace que nous avons défini dans le fichier YAML en utilisant la commande suivante: `kubecl create -f namespace.yaml`
