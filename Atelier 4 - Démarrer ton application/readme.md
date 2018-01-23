@@ -16,7 +16,7 @@ metadata:
   name: azure
 ```
 
-Une fois que vous serez connecté avec `kubectl` sur votre cluster nous allons instancier la création du namespace que nous avons défini dans le fichier YAML en utilisant la commande suivante: `kubecl create -f namespace.yaml`
+Une fois que vous serez connecté avec `kubectl` sur votre cluster nous allons instancier la création du namespace que nous avons défini dans le fichier YAML en utilisant la commande suivante: `kubectl create -f namespace.yaml`
 Votre namespace est maintenant créé et prêt à recevoir votre application
 
 ## Création du secret pour accéder au repository d'images
@@ -58,7 +58,7 @@ Une fois ce service déployé, vous avez maintenant vos pods qui tournent sur le
 Afin de créer le servive de votre backend et le rendre accessible par les autres services et/ou pods, exécuter la commande suivante:
 
 ```
-kubectkl create -f service-back.yaml
+kubectl create -f service-back.yaml
 ```
 
 
@@ -79,5 +79,5 @@ Une fois ce service déployé, vous avez maintenant vos pods qui tournent sur le
 Afin de créer le servive de votre backend et le rendre accessible de l'extéiruer, exécuter la commande suivante qui créera le service et assignera de manière simple un loadbalancer Azure pour répartir la charge entre les pods.
 
 ```
-kubectkl create -f service-back.yaml
+kubectl create -f service-back.yaml
 ```
