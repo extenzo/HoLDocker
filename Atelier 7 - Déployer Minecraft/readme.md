@@ -14,7 +14,7 @@ RUN apt-get install default-jre wget -y
 RUN mkdir /mcserv
 WORKDIR /mcserv
 RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar && echo eula=true>eula.txt
-ENTRYPOINT ["java", "-Xmx1024M -Xms1024M -jar /mcserv/minecraft_server.1.12.2.jar  nogui"] 
+CMD java -Xmx1024M -Xms1024M -jar /mcserv/minecraft_server.1.12.2.jar nogui
 ```
 
 ## A votre tour
