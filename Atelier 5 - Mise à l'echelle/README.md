@@ -6,3 +6,30 @@ Dans un premier temps, nous utiliserons les fonctions manuelles, puis dans un se
 
 # Pre requis
 Avoir terminer les ateliers précédents
+
+
+#Mise à l'échelle manuellement
+.....
+Identifier les pods
+- Exécuter la commande     "kubectl get pods"
+
+.......
+Augmenter le nombre de pods :
+- Exécuter la commande     "kubectl scale --replicas=5 deployment/azure-vote-front"
+
+......
+Valider :
+- Exécuter la commande     "kubectl get pods"
+
+
+
+#mise à l'echelle manuelle
+......
+Identification des paramètres dans le fichier yaml
+- Editer le fichier deployement-front.yaml
+- Localiser la zone contenant les paramètres "cpu"
+
+.....
+Utilisation de la commande [kubectl autoscale] (https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+- Executer la commande       "kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=3 --max=10"
+- Executer la commande       "kubectl get hpa"

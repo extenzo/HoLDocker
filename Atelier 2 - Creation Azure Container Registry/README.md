@@ -34,15 +34,15 @@ Note si besoin de changer le tenant par défaut, utiliser la commande "az accoun
 
 .....
 Création du Groupe de ressources via la commande [az group create] (https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#create)
-- Exécuter la commande     "az group create <MonGroupeRessource> --location westeurope"
+- Exécuter la commande     "az group create MonGroupeRessource --location westeurope"
 
 .....
 Création de la registry via la commande [az acr create] (https://docs.microsoft.com/en-us/cli/azure/acr?view=azure-cli-latest#create)
-- Exécuter la commande     "az acr create --resource-group <MonGroupeRessource> --name <MonAcr> --sku Basic"
+- Exécuter la commande     "az acr create --resource-group MonGroupeRessource --name MonAcr --sku Basic"
 
 .....
 Authentification sur la registry
-- Exécuter la commande     "az acr login --name <MonAcr>"
+- Exécuter la commande     "az acr login --name MonAcr"
 
 .....
 Validation 
@@ -57,11 +57,11 @@ Afin d'identifier la cible quand on publie dans une registry une image de contai
 
 .....
 Identification du serveur de la registry
-- Exécuter la commande     "az acr list --resource-group <MonGroupeRessource> --query "[].{acrLoginServer:loginServer}" --output table"
+- Exécuter la commande     "az acr list --resource-group MonGroupeRessource --query "[].{acrLoginServer:loginServer}" --output table"
 
 .....
 Taguer l'image avec le nom du serveur
-- Exécuter la commande     "docker tag azure-vote-front <MonacrLoginServer>/azure-vote-front:redis-v1
+- Exécuter la commande     "docker tag azure-vote-front MonacrLoginServer/azure-vote-front:redis-v1
 
 .....
 Vérifier
@@ -75,9 +75,9 @@ Le résultat doit montrer une image préfixée avec le nom du serveur
 Publication de l'image
 
 Nous utilisons pour cela la commande [docker push] (https://docs.docker.com/engine/reference/commandline/push/)
-- Exécuter la commande     "docker push <MonacrLoginServer>/azure-vote-front:redis-v1
+- Exécuter la commande     "docker push MonacrLoginServer/azure-vote-front:redis-v1
 
 .....
 Lister les images dans ACR
-- Exécuter la commande     "az acr repository list --name <MonAcr> --output table
+- Exécuter la commande     "az acr repository list --name MonAcr --output table
  

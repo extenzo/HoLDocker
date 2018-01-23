@@ -20,10 +20,10 @@ Si vous utilisez Docker for Windows : Il faut s'assurer que l'environnement Dock
 - Exécuter la commande     "docker search redis"   afin de rechercher dans les container registry publique les images linux + redis
 
 Autres commandes basiques que nous utiliserons plus tard :
-- "docker pull <monimage>" pour charger une image dans le cache local
-- "docker push <monserveurregistry>/<monimage>" pour uploader une image locale dans une registry
+- "docker pull monimage" pour charger une image dans le cache local
+- "docker push monserveurregistry/monimage" pour uploader une image locale dans une registry
 - "docker run" pour exécuter un container de manière isolée
-- "docker-compose <monfichieryml>" outil pour définir et exécuter une application basée sur plusieurs containers  
+- "docker-compose monfichieryml" outil pour définir et exécuter une application basée sur plusieurs containers  
 
 
 # définition et creation de l'application
@@ -44,4 +44,10 @@ On remarque que trois images ont été téléchargée ou créées
 - Tester l'application depuis un navigateur via l'URL "http://localhost:8080"
 
 
-# Option - Mise à jour de l'applications
+# Option - Mise à jour de l'application
+Vous pouvez réaliser ces opérations maintenant ou lorsque l'application sera déployée  dans le cluster
+Localisez le fichier config_file.cfg
+Modifier les valeurs pour VOTE1VALUE et VOTE2VALUE
+- Exécuter la commande     "docker-compose up -d" 
+
+Note : les images étant déjà chargées, remarquez la rapidité d'exécution :-)
