@@ -34,7 +34,7 @@ Note si besoin de changer le tenant par défaut, utiliser la commande "az accoun
 
 .....
 Création du Groupe de ressources via la commande [az group create] (https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#create)
-- Exécuter la commande     "az group create MonGroupeRessource --location westeurope"
+- Exécuter la commande     "az group create --name MonGroupeRessource --location westeurope"
 
 .....
 Création de la registry via la commande [az acr create] (https://docs.microsoft.com/en-us/cli/azure/acr?view=azure-cli-latest#create)
