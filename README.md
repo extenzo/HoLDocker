@@ -10,10 +10,11 @@ Puis une fois les différents concepts parcourus, il sera temps de passer aux ch
 Description des ateliers
 - Atelier 1 : Déployer l'application de sondage dans l'environnement Docker local (voir les outils indispensables pour le lab en fin de document) et manipuler les commandes de base de Docker
 - Atelier 2 : Créer une Container Registry dans Azure et exporter les images
-- Atelier 3 : Création d'un cluster Kubernetes dans Azure et déploiement de l'application
-- Atelier 4 : Manipulation des outils Kubernetes en particulier pour les fonctions de mise à l'échelle
-- Atelier 5 : Mise en oeuvre de la supervision via Azure Log Analytics
-- Atelier 6 : Création d'un container pour exécuter MineCraft et utilisant de l'infrastructure créée dans les ateliers précédents pour le faire exécuter au sein du cluster Kubernetes
+- Atelier 3 : Création d'un cluster Kubernetes dans Azure 
+- Atelier 4 : Déploiement de l'application
+- Atelier 5 : Manipulation des outils Kubernetes en particulier pour les fonctions de mise à l'échelle
+- Atelier 6 : Mise en oeuvre de la supervision via Azure Log Analytics
+- Atelier 7 : Création d'un container pour exécuter MineCraft et utilisant de l'infrastructure créée dans les ateliers précédents pour le faire exécuter au sein du cluster Kubernetes
 
 
 
