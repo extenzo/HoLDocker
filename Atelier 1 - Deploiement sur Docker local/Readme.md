@@ -48,6 +48,6 @@ On remarque que trois images ont été téléchargée ou créées
 Vous pouvez réaliser ces opérations maintenant ou lorsque l'application sera déployée  dans le cluster
 Localisez le fichier config_file.cfg
 Modifier les valeurs pour VOTE1VALUE et VOTE2VALUE
-- Exécuter la commande     "docker-compose up -d" 
+- Exécuter la commande     "docker-compose up -- build -d" 
 
 Note : les images étant déjà chargées, remarquez la rapidité d'exécution :-)
